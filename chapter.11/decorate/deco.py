@@ -32,8 +32,10 @@ def logged(when):
         raise ValueError(e), 'must be "pre" or "post"'
 
 
-@logged("post")
+# @logged("post")
 def hello(name):
     print "Hello,", name
+
+hello = logged("post")(hello)
 
 hello("World!")
